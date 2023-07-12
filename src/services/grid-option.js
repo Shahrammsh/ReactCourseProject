@@ -1,4 +1,4 @@
-interface GridOption 
+class GridOption 
 {
     url:  string ; 
     columnItem : []  ;
