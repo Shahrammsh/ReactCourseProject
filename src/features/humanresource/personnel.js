@@ -4,7 +4,7 @@ import {useState } from "react";
 
 const Personnel = () =>{  
         const [gridOptions , setGridOptions ] =useState ( {
-                url  : 'http://localhost:3005/users' ,
+                url  : 'http://localhost:3001/personnels' ,
                 columnItem: [
                         {name : 'id' ,  title : 'شناسه' ,isEditable : false , type: Number , isFilterable : false , isSortable: true   } , 
                         {name : 'firstName' , title : 'نام' ,isEditable : false , type:String , isFilterable : false , isSortable: true} ,

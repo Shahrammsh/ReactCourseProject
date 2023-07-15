@@ -1,17 +1,28 @@
 import './App.css';
-import {ContactUs, ErrorPage, Layout } from './pages';
-import {RouterProvider, createBrowserRouter} from 'react-router-dom';
+import {ErrorPage, Layout , Home, ContactUs} from './pages';
+import {Personnel} from "./features" ;
+import {RouterProvider, createBrowserRouter } from 'react-router-dom';
 function App() {
   const router = createBrowserRouter([
     {
       path:"/" ,
       element:<Layout />,
+      children :[
+        {
+          path:"Home" ,
+          element:<Home />
+        } ,
+        {
+          path:"Personnel" ,
+          element: <Personnel></Personnel>
+        } ,
+        {
+          path:"ContactUs" ,
+          element:<ContactUs></ContactUs>
+        }
+      ],
       errorElement:<ErrorPage />
-    } , 
-    {
-      path: "./pages/contact-us.js" ,
-      element: <ContactUs/> 
-    }
+    } 
 ]);
  
   return (

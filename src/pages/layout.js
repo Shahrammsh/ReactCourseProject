@@ -1,17 +1,28 @@
-import { Link, Nav, NavLink } from "react-router-dom";
+import {Link, Outlet} from "react-router-dom" ;
 const Layout = () => {
   return (
+
     <>
-      <div id="sidebar">
-        <nav>
-          <ul>
-            <li>
-              <Link to="./../features/humanresource/personnel">Personnel</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <nav> 
+      <ul> 
+        <li> 
+          <Link to="/Home" >صفحه اصلی</Link>
+        </li>
+      </ul>
+      <ul> 
+        <li> 
+          <Link to="/Personnel" >مدیریت پرسنل</Link>
+        </li>
+      </ul>
+      <ul> 
+        <li> 
+          <Link to="/ContactUs">تماس با ما</Link>
+        </li>
+      </ul>
+    </nav>
+    <Outlet></Outlet>
     </>
+   
   );
 };
 

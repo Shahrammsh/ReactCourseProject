@@ -4,7 +4,7 @@ import styles from '../../assests/CSS/grid-view.module.css';
 const GridColumn =({value})=>{
     return (
       
-            <div className={styles['col-1']}> 
+            <div className={styles['column']}> 
             {value}
             </div>
 

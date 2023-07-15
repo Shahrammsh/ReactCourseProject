@@ -1,1 +1,1 @@
-export { default as Personnel} from './humanresource/personnel';
+export { default as Personnel} from "./humanresource/personnel";
