@@ -1,8 +1,22 @@
 import {Link, Outlet} from "react-router-dom" ;
-const Layout = () => {
-  return (
+import '../i18n' ;
+import {resources} from '../utils/utilities';
+import {} from '';
 
+const Layout = () => {
+
+
+ const langRadios = [] ;
+
+ for(const x in resources){  
+    langRadios.push(<label><input type='radio' name={x} />{x}</label>);
+ }
+  
+  return (
     <>
+    <div> 
+    {langRadios}
+    </div>
     <nav> 
       <ul> 
         <li> 

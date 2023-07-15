@@ -13,7 +13,8 @@ const Personnel = () =>{
                 height: 500 ,
                 width: 800 , 
                 numberRows : 10 ,
-                allowInsert: false,
+                allowInsert: true,
+                lang: ''
         } );
 
         return (

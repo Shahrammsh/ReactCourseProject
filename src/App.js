@@ -2,7 +2,10 @@ import './App.css';
 import {ErrorPage, Layout , Home, ContactUs} from './pages';
 import {Personnel} from "./features" ;
 import {RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+
 function App() {
+  
   const router = createBrowserRouter([
     {
       path:"/" ,

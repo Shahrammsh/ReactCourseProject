@@ -19,11 +19,7 @@ const GridRow = ({columnObject})=>{
     }) ;
 
     return ( 
-        <div className={styles['row']}> 
-            {rows}
-        </div>
-        
-      
+        <div className={styles['row']}>{rows}</div>
     );
 
 }

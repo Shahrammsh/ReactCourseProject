@@ -1,2 +1,16 @@
+import translationEN from "../lang/en-US.json";
+import translationFA from "../lang/fa-IR.json";
 
-const INSERT_NEW_LABEL  = "درج جدید";
+export const resources ={
+    en:{
+        translation: translationEN , 
+        label: 'English'
+    }, 
+    fa:{
+        translation: translationFA ,
+        label:'Persian'
+    }
+}
+;
+
+export default {resources,};
