@@ -1,3 +1,8 @@
 {
-    "NEW_INSERT_BUTTON_LABEL" : "درج جدید"
+    "LANG_LABEL" :"Persian"  ,
+    "NEW_INSERT_BUTTON_LABEL" : "درج جدید" ,
+    "GRID_PAGINATION_NEXT":"بعدی" ,
+    "GRID_PAGINATION_PREVIOUS":"قبلی",
+    "SAVE": "ذخیره" ,
+    "CANCEL" : "انصراف"
 }

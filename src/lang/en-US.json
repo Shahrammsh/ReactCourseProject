@@ -1,3 +1,9 @@
  {
-    "NEW_INSERT_BUTTON_LABEL" : "New Insert"
+    "LANG_LABEL" :"ENGLISH"  ,
+    "NEW_INSERT_BUTTON_LABEL" : "New Insert" ,
+    "GRID_PAGINATION_NEXT":"Next" ,
+    "GRID_PAGINATION_PREVIOUS":"Previous" ,
+    "SAVE": "Save" ,
+    "CANCEL" : "Cancel"
 }
+

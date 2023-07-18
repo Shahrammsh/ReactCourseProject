@@ -1,16 +1,11 @@
 import React from "react";
+import styles from '../../assests/CSS/grid-view.module.css'
 
-const GridButton =({title})=>{
-    console.log(title);
-    const handlerClick =(event)=>
-    {
-        alert('insert button clicked');
-    }
-
+const GridButton =({title, onclick})=>{
+   
     return (
         <div> 
-            <button onClick={handlerClick} >{title}</button>
-
+            <button className={styles['button']} onClick={onclick} >{title}</button>
         </div>
     );
 

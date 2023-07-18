@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import {useState } from 'react';
+import '../../i18n';
+import { useTranslation } from "react-i18next";
+
 const GridPagination =(props)=>{ 
    const [current  , setCurrent] = useState(props.currentPage);
+   const[t , i18n] = useTranslation();
     useEffect(function (){
         if (typeof(props.onPagingClick )=== 'function')
         {           
@@ -32,9 +36,9 @@ const GridPagination =(props)=>{
        <>
        
         <div> 
-        <button id="previous"  onClick={handlePreviousClick}>Previous  </button>        
+        <button id="previous"  onClick={handlePreviousClick}>{t('GRID_PAGINATION_PREVIOUS')}  </button>        
         {buttons}
-        <button id="Next" onClick={handleNextClick}>Next  </button>
+        <button id="Next" onClick={handleNextClick}>{t('GRID_PAGINATION_NEXT')}  </button>
         </div>
        
         
