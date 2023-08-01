@@ -6,6 +6,19 @@
 }
 ul{
     list-style: none;
+    display: inline-block;
+    margin-left: 20px;
     padding: 0;
     margin: 0;
+}
+          
+ul li {
+    list-style: none;
+    position: relative;
+    padding: 3px 0 2px 25px;
+  }
+
+li a {
+    text-decoration: none;
+
 }

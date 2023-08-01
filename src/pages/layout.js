@@ -14,12 +14,13 @@ const Layout = () => {
   for (const x in resources) {
     langRadios.push(
       i18n.language === x ? (
-        <label>
+        <label className ="">
           <input
             type="radio"
             value={x}
             name="radioLang"
-            onChange={handleChecked}
+            checked
+            onChange={handleChecked}            
           />{x}
         </label>
       ) : (
@@ -36,8 +37,10 @@ const Layout = () => {
   }
   return (
     <>
-      <div className={styles["" + i18n.dir() + ""]}>
-        {langRadios}
+    <div> 
+    {langRadios}
+      </div> 
+      <div className={styles["" + i18n.dir() + ""]}>    
         <nav>
           <ul>
             <li>

@@ -9,39 +9,35 @@ import axios from 'axios'
 const Grid = ({ options, children }) => {
   console.log(options.insertButtonOnClick);
   const [t, i18n] = useTranslation();
-  const [selectUrl, setGridUrl] = useState(options.url);
+  const [url, setUrl] = useState(options.url);
   const [data, setData] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [numberRows, setNumberRows] = useState(options.numberRows);
+  const [currentPage, setCurrentPage] = useState(0); 
   const [pageCount, setPageCount] = useState();
   const [isShowInsertForm, setIsShowInsertForm] = useState(false);
 
   useEffect(() => {   
-    fetch(`${selectUrl}?_page=${currentPage}&&_limit=${numberRows}`).then(
+    fetch(`${url}?_page=${currentPage}&&_limit=${options.numberRows}`).then(
       (response) => {
         setTotalCount(response.headers.get("X-Total-Count"));
-        setPageCount( (totalCount % numberRows)> 0 ?
-             Math.floor(totalCount / numberRows) + 1 :  
-             Math.floor(totalCount / numberRows));
+        setPageCount( (totalCount % options.numberRows)> 0 ?
+             Math.floor(totalCount / options.numberRows) + 1 :  
+             Math.floor(totalCount / options.numberRows));
         response.json().then((result) => setData(result));
       }
     );
-  }, [selectUrl, currentPage, numberRows, totalCount]);
+  }, [url, currentPage, totalCount]);
 
   const rows = data.map((item) => {
     return <GridRow columnObject={item}></GridRow>;
   });
 
   const handlerOnSave =(object)=>{
-   console.log(object)
 
-   axios.post('http://localhost:3001/personnels', object)
+   axios.post(url, object) 
         .then(response => {           
-            setIsShowInsertForm(false);         
-            
-        });
-       
+            setIsShowInsertForm(false);                     
+        });      
   }
   const handlerButtonClick = () => {
     setIsShowInsertForm(true);

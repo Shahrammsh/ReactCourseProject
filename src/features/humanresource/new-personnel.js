@@ -1,42 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../i18n';
 import { useTranslation } from 'react-i18next';
 
 const NewPersonnel=()=>{
     const [t, i18n] = useTranslation();    
-
-    
     return (
         i18n.language === "fa" ? 
         <div> 
             <div> 
                 <label>نام :</label>
                 <input
-                    id='firstName'
+                    id="firstName"
                     name ="firstName"
-                    type="text" 
-                   
+                    type="text"                    
                 >
                 </input>
             </div>
             <div> 
                 <label>نام خانوادگی</label>
                 <input
-                  id='lastName'
+                  id="lastName"
                   name ="lastName"
                   type="text" 
                 >
                 </input>
             </div>
-            <br/>
-          
+            <br/>          
         </div>
         :
         <div> 
         <div> 
             <label>First Name :</label>
             <input
-                id='firstName'
+                id= "firstName"
                 name ="firstName"
                 type="text" 
             >
@@ -45,16 +41,14 @@ const NewPersonnel=()=>{
         <div> 
             <label>Last Name: </label>
             <input
-              id='lastName'
+              id="lastName"
               name ="lastName"
-              type="text" 
+              type="text"
             >
             </input>
         </div>
-        <br/>
-       
+        <br/>       
     </div>
     );
-
 }
 export default NewPersonnel;
