@@ -6,7 +6,7 @@ import GridPagination from "./grid-pagination";
 import { useTranslation } from "react-i18next";
 import InsertForm from "./grid-Insert-form";
 import axios from 'axios'
-const Grid = ({ options, children }) => {
+const Grid = ({ options, insertForm  }) => {
   console.log(options.insertButtonOnClick);
   const [t, i18n] = useTranslation();
   const [url, setUrl] = useState(options.url);
@@ -54,7 +54,7 @@ const Grid = ({ options, children }) => {
             onSave={handlerOnSave}
             onClose={()=>setIsShowInsertForm(false)}
           >
-            {children}
+            {insertForm}
           </InsertForm>
         ) : null}
       </div>

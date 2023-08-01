@@ -20,7 +20,7 @@ const Personnel = () =>{
         
 
         return (
-                <Grid options={gridOptions}>{<NewPersonnel></NewPersonnel>}</Grid>
+                <Grid options={gridOptions} insertForm={<NewPersonnel></NewPersonnel> }></Grid>
         );
 };
 
