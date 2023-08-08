@@ -8,39 +8,44 @@ const Layout = () => {
   const langRadios = [];
 
   const handleChecked = (e) => {
-    console.log(e);
     i18n.changeLanguage(e.target.value);
   };
-  for (const x in resources) {
+  let index =0 ;
+  for (const value  in resources ) {
+    index++;
     langRadios.push(
-      i18n.language === x ? (
-        <label className ="">
+      i18n.language === value ? (
+        <label key={index}>
           <input
             type="radio"
-            value={x}
+            value={value}
             name="radioLang"
             checked
-            onChange={handleChecked}            
-          />{x}
+            onChange={handleChecked}
+          />
+          {value}
         </label>
       ) : (
-        <label>
+        <label key={index}>
           <input
             type="radio"
-            value={x}
+            value={value}
             name="radioLang"
             onChange={handleChecked}
-          />{x}
+          />
+          {value}
         </label>
       )
     );
+    
   }
+ 
+
+
   return (
     <>
-    <div> 
-    {langRadios}
-      </div> 
-      <div className={styles["" + i18n.dir() + ""]}>    
+      <div>{langRadios}</div>
+      <div className={styles["" + i18n.dir() + ""]}>
         <nav>
           <ul>
             <li>
