@@ -42,7 +42,7 @@ const Personnel = () => {
     ],
     height: 450,
     width: 800,
-    numberRows: 10,
+    numberRows: 3,
     allowInsert: true,
   });
 

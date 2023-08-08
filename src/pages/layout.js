@@ -3,6 +3,7 @@ import "../i18n";
 import { resources } from "../utils/utilities";
 import { useTranslation } from "react-i18next";
 import styles from "../assests/CSS/layout.module.css";
+import { RadioGroup, Radio, FormControlLabel } from "@mui/material";
 const Layout = () => {
   const [t, i18n] = useTranslation();
   const langRadios = [];
@@ -10,41 +11,29 @@ const Layout = () => {
   const handleChecked = (e) => {
     i18n.changeLanguage(e.target.value);
   };
-  let index =0 ;
-  for (const value  in resources ) {
+  let index = 0;
+
+  for (const x in resources) {
     index++;
     langRadios.push(
-      i18n.language === value ? (
-        <label key={index}>
-          <input
-            type="radio"
-            value={value}
-            name="radioLang"
-            checked
-            onChange={handleChecked}
-          />
-          {value}
-        </label>
-      ) : (
-        <label key={index}>
-          <input
-            type="radio"
-            value={value}
-            name="radioLang"
-            onChange={handleChecked}
-          />
-          {value}
-        </label>
-      )
+      <FormControlLabel key={index} value={x} control={<Radio />} label={x} />
     );
-    
   }
- 
-
 
   return (
     <>
-      <div>{langRadios}</div>
+      <div>
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="fa"
+          name="radio-lang-group" 
+          row ={true}
+          onChange={ handleChecked}
+          >
+          {langRadios}
+        </RadioGroup>
+        ;
+      </div>
       <div className={styles["" + i18n.dir() + ""]}>
         <nav>
           <ul>

@@ -1,14 +1,16 @@
 import React from "react";
-import styles from '../../assests/CSS/grid-view.module.css'
+import Button from '@mui/material/Button';
 
-const GridButton =({title, onclick})=>{
-   
-    return (
-        <div> 
-            <button className={styles['button']} onClick={onclick} >{title}</button>
-        </div>
-    );
+import styles from "../../assests/CSS/grid-view.module.css";
 
-}
+const GridButton = ({ title, onclick }) => {
+  return (
+    <div>
+      <Button variant="outlined" onClick={onclick}>
+        {title}
+      </Button>
+    </div>
+  );
+};
 
-export default GridButton ;
+export default GridButton;
